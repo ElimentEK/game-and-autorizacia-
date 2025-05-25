@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+ xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+ x:Class="autorizacia.MainPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- Верхняя панель счёта -->
+        <Label x:Name="scoreLabel"
+               Text="Score: 0"
+               TextColor="White"
+               FontSize="Large"
+               HorizontalOptions="Center"
+               Grid.Row="0"/>
+
+        <!-- Игровая область -->
+        <AbsoluteLayout x:Name="gameArea"
+                        Grid.Row="1"
+                        BackgroundColor="Black">
+        </AbsoluteLayout>
+
+        <!-- Панель управления -->
+        <Grid Grid.Row="2"
+              BackgroundColor="#333333"
+              Padding="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Кнопка вверх -->
+            <Button Text="↑"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    BackgroundColor="#555555"
+                    TextColor="White"
+                    FontSize="Large"
+                    Clicked="OnUpClicked"/>
+
+            <!-- Кнопка влево -->
+            <Button Text="←"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    BackgroundColor="#555555"
+                    TextColor="White"
+                    FontSize="Large"
+                    Clicked="OnLeftClicked"/>
+
+            <!-- Кнопка вниз -->
+            <Button Text="↓"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    BackgroundColor="#555555"
+                    TextColor="White"
+                    FontSize="Large"
+                    Clicked="OnDownClicked"/>
+
+            <!-- Кнопка вправо -->
+            <Button Text="→"
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    BackgroundColor="#555555"
+                    TextColor="White"
+                    FontSize="Large"
+                    Clicked="OnRightClicked"/>
+
+            <!-- Кнопка рестарта -->
+            <Button x:Name="restartButton"
+                    Text="Restart"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="3"
+                    IsVisible="False"
+                    BackgroundColor="#AA0000"
+                    TextColor="White"
+                    Clicked="OnRestartClicked"/>
+        </Grid>
+    </Grid>
+</ContentPage>
